@@ -1,0 +1,135 @@
+`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form" id="promotion-1">
+        <div class="container container--textinput">
+            <input type="text" class="form__textinput" required="true" spellcheck="false" onkeyup="checkInputValidity(this)">
+            <div class="form__label form__label--nopointer">Как к Вам обращатся?</div>
+            <button class="btn btn-input" onclick="btnInputClick(this.parentNode)">Далее</button>
+        </div>
+    </div>
+    <div class="form hidden" id="promotion-2">
+        <div class="form__label">Что включено в услугу: </div>
+        <div class="container">
+            <ul class="form__list">
+                <li class="form__list__item">Семантическое ядро</li>
+                <li class="form__list__item">Аналитика</li>
+                <li class="form__list__item">SEO адаптация</li>
+                <li class="form__list__item">Размещение в поисковых системах</li>
+                <li class="form__list__item">Реклама на сторонних веб ресурсах</li>
+            </ul>
+            <button class="btn " onclick="emitChange(this.parentNode)">Далее</button>
+        </div>
+    </div>
+    <div class="form hidden" id="promotion-3">
+        <div class="form__label">Выделите опциональные услуги</div>
+        <div class="container">
+            <form class="form__select" id="select-3">
+                <div class="checkbox promo-3" checked="false">
+                    <div class="checkbox__icon"></div>
+                    <div class="checkbox__text">Услуга</div>
+                </div>
+                <div class="checkbox promo-3" checked="false">
+                    <div class="checkbox__icon"></div>
+                    <div class="checkbox__text">Услуга</div>
+                </div>
+                <div class="checkbox promo-3" checked="false">
+                    <div class="checkbox__icon"></div>
+                    <div class="checkbox__text">Услуга</div>
+                </div>
+                <div class="checkbox promo-3" checked="false">
+                    <div class="checkbox__icon"></div>
+                    <div class="checkbox__text">Услуга</div>
+                </div>
+            </form>
+            <button class="btn btn-checkbox" onclick="btnCheckboxClick(this.parentNode.firstChild.nextSibling)">Далее</button>
+        </div>
+    </div>
+    <div class="form hidden" id="promotion-4">
+        <div class="form__label" id="promo-4_label">Были ли Вы нашим клиентом? </div>
+        <div class="container">
+            <div class="form__trigger">
+                <button class="btn btn-trigger" onclick="oldClientFunc(true);">Да</button>
+                <button class="btn btn-trigger btn--red" onclick="oldClientFunc(false);">Нет</button>
+            </div>
+        </div>
+    </div>
+    <div class="form hidden" id="promotion-5">
+        <div class="container container--textinput">
+            <input type="text" class="form__textinput" required="true" spellcheck="false">
+
+            <div class="form__label form__label--nopointer form__label--light label20">Укажите номер Вашего заказа или ссылку на сайт</div>
+
+            <button class="btn btn-email" onclick="checkDatabase(this.parentNode.firstChild.nextSibling
+)">Проверить</button>
+        </div>
+    </div>
+
+    <div class="form hidden" id="promotion-6">
+        <div class="form__label form__label--green">Cкидка присвоена :)</div>
+    </div>
+
+    <div class="form hidden" id="promotion-7">
+        <div class="form__label red">Неверный номер заказа</div>
+    </div>
+
+    <div class="form hidden" id="promotion-8">
+        <div class="container container--textinput">
+            <input type="text" class="form__textinput" required="true" spellcheck="false">
+            <div class="form__label form__label--nopointer form__label--light">Укажите адрес электронной почты, для обратной связи</div>
+            <button class="btn btn-email" onclick="btnEmailClick(this.parentNode)">Проверить</button>
+            <div class="form__label--small more_label" onclick="showVK()">Использовать ВК</div>
+            <div class="form__vk">
+                <div class="form__label vk_label">Укажите адрес VK</div>
+                <input type="text" class="form__textinput">
+            </div>
+        </div>
+    </div>
+    <div class="form hidden" id="promotion-9">
+        <div class="form__label">Отправка анкеты: </div>
+    </div>
+    <div class="form hidden" id="promotion-10">
+        <div class="form__label form__label--green">Заявка принята</div>
+    </div>
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="timeline__item timeline__item--active" form="1"></div>
+            <div class="timeline__item" form="2"></div>
+            <div class="timeline__item" form="3"></div>
+            <div class="timeline__item" form="4"></div>
+            <div class="timeline__item" form="5"></div>
+            <div class="timeline__item" form="6"></div>
+            <div class="timeline__item" form="7"></div>
+            <div class="timeline__item" form="8"></div>
+            <div class="timeline__item" form="9"></div>
+        </div>
+    </div>
+    <div class="form__discount">
+        <div class="discount-left">
+            Скидка
+        </div>
+        <div class="discount-right">
+            5%
+        </div>
+    </div>
+    <div class="form__cycle form__cycle--left" cycle-dir="left" onclick="cycle(this)">
+    </div>
+    <div class="form__cycle form__cycle--right" cycle-dir="right" onclick="cycle(this)"></div>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js ">
+    </script>
+    <script src="main.js ">
+    </script>
+</body>
+
+</html>
